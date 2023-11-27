@@ -1,0 +1,41 @@
+#post-form {
+    width: 91.5%;
+    margin: auto;
+    font-size: 20px;
+}
+
+.post-table {
+    width: 100%;
+    margin: 15px 0px;
+}
+.post-table td {
+    padding: 5px
+}
+
+.post-bar {
+	font-family: var(--main-font);
+	font-size: 18px;
+	border-radius: 5px;
+	outline: none;
+	border: 2px solid white;
+	width: 100%;
+}
+.post-bar:focus {
+	box-shadow: 0 0 10px 5px var(--tertiary-color);
+	outline: none;
+	border: 2px solid white;
+}
+
+.post-submit {
+	background-color: var(--tertiary-color);
+	font-family: var(--nav-font);
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	width: 25%;
+	padding: 5px;
+    margin-top: 5px;
+}
+.post-submit:hover {
+	background-color: var(--tertiary-color-lighter);
+}

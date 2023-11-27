@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="/css/search.css">
+
+<center>
+    <form id="search-form" action="" method="GET">
+        <div class="searchbar-container">
+            <button type="submit" class="searchbutton"><i class="fa fa-search"></i></button>
+            <input type="text" name="q" class="searchbar" placeholder="Search" required>
+        </div>
+
+        <!-- Post and Comments options -->
+        <div class="search-option">
+            <input type="radio" id="post" name="type" value="post">
+            <label for="post"><i class="fa fa-copy"></i>&nbsp; Posts</label>
+
+            <input type="radio" id="comment" name="type" value="comment">
+            <label for="comment"><i class="fa fa-comment"></i>&nbsp; Comments</label>
+        </div>
+
+        <div id="search-nofound"></div>
+    </form>
+</center>
+
+<script>
+    /* ------- Post/Comment Mode Display ------- */
+    const urlParams = new URLSearchParams(location.search);
+
+    // Check if query is "type=post"
+    if(urlParams.get('type') === 'post') {
+        $("#post").prop("checked", true);
+    } else { // Otherwise, assume "type=comment"
+        $("#comment").prop("checked", true);
+    }
+</script>
+
+{{#each postResults}}
+    <button class="section-topic">
+        <img src="img/thumb_default.jpg" class="post-thumb">
+        <p>
+            <h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+            {{shortDesc}}<br>
+            <small class="post-details">Posted by <b><a href="/user/{{user}}">{{user}}</a></b> on {{timePosted}}</small>
+        </p>
+    </button>
+{{/each}}
+
+{{#each commentResults}}
+    <button class="section-topic">
+        <img src="img/thumb_default.jpg" class="post-thumb">
+        <p>
+            <h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+            {{content}}<br>
+            <small class="post-details">Posted by <b><a href="/user/{{user}}">{{user}}</a></b> on {{timePosted}}</small>
+        </p>
+    </button>
+{{/each}}

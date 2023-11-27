@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href="/css/profile.css">
+
+<div class="profile-container">
+    <!-- User Info -->
+    <div class="profile-info">
+        <div class="profile-info-container">
+            <div class="profile-pfp">
+                <img src="/img/{{user.pfpURL}}" width="200">
+            </div>
+            <div class="profile-username">{{user.username}}</div>
+            <div class="profile-description">{{user.description}}</div>
+
+            <div class="profile-row">
+                <div class="profile-row-label">JOINED</div>
+                <div id="join-date">{{user.joined}}</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-row-label">LAST ACTIVE</div>
+                <div id="last-active">{{user.lastActive}}</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-row-label">PRONOUNS</div>
+                <div id="gender">{{user.pronouns}}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User posts and comments -->
+    <div class="profile-folder">
+        <nav>
+            <button class="folder-tab" id="default-tab" onClick="profileTab(event, 'folder-posts')">Posts</button>
+            <button class="folder-tab" onClick="profileTab(event, 'folder-comments')">Comments</button>
+        </nav>
+        
+        <div id="folder-posts" class="folder-content">
+            {{#each userPost}}
+                <a href="/post/{{_id}}"><button class="folder-topic">
+                    <p>
+                        <h3 class="folder-title">{{title}}</h3>
+                        {{shortDesc}}
+                    </p>
+                </button></a>
+            {{/each}}
+        </div>
+
+        <div id="folder-comments" class="folder-content">
+            <a href="/post/counter_strike_2_strategy_discussion.html"><button class="folder-topic">
+                <p>
+                    <h3 class="folder-title">Counter-Strike 2 Strategy and Discussion</h3>
+                    Whoa, I didn't know CS2 had a lot in common with CS:GO! Time for me to try playing CS2. Unfortunately I got no tips yet. You can tell from what I've mentioned before that I haven't played CS2 yet. Will take note of your tips, though.
+                </p>
+            </button></a>
+
+            <a href="/post/minecraft_showcase.html"><button class="folder-topic">
+                <p>
+                    <h3 class="folder-title">Minecraft Building Showcase</h3>
+                    I can't believe my childhood game is trending again. That's how the Internet works, I guess. Anyway, feast your eyes on my redstone masterpiece! This is why you don't hand over a PC to a computer science graduate. (lol)
+                </p>
+            </button></a>
+        </div>
+    </div>
+</div>
+<script src="/js/profile_tab.js"></script>

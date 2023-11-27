@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "654e1bc625ba041cfe708381"
+  },
+  "user": "nodJS",
+  "op": true,
+  "title": "Forum Features and Feedback",
+  "content": "<p>This is where you can give us any suggestions to improve the forums, or ask any other related questions.</p><h4>Some rules</h4><ul><li>Please be patient for new features to be added. We are humans, not machines.</li><li>For technical issues, contact the devs through the<a href=\"/help\">help page</a>.</li></ul>",
+  "points": 2678,
+  "timePosted": "2022-02-04, 11:31 AM",
+  "updatedAt": {
+    "$date": "2023-11-14T09:28:11.152Z"
+  },
+  "shortDesc": "Feel free to post any questions you have about the forum, or suggestions on how we can improve."
+},
+{
+  "_id": {
+    "$oid": "655815c17ecf3448a7fa8542"
+  },
+  "user": "mco_taker",
+  "op": true,
+  "title": "Forum Rules",
+  "shortDesc": "Please read our forum rules before posting or commenting!",
+  "content": "<p>Welcome to<b>LevelUpLounge</b>, your corner for video games and more!</p><ul><li>As much as possible, keep your posts and comments related to video games and any other similar topics. Unrelated topics such as religion, politics, etc. may be removed.</li><li>Users are not allowed to disclose personal information for their own safety. Revealing another user’s personal information will merit a<b>permanent ban</b>for those involved.</li><li>Do not harass any other forum users, including moderators and other staff. It’s okay to express your opinion, but keep it civil.</li><li>Hate speech is not permitted. Posting or commenting about hate speech will result in a<b>permanent ban</b>.</li><li>Refrain from bumping up threads just for the sake of it. Non-productive comments not related to the topic at hand will be removed.</li><li>Self-promotion of personal products, materials, etc. is not allowed. Posts containing such content will be edited or deleted.</li><li>Illegal activity such as piracy is not allowed.</li><li>Linking to files which contain viruses or malware will result in a<b>permanent ban</b>.</li></ul>",
+  "points": 9000,
+  "timePosted": "2022-01-20, 10:39 PM"
+}]

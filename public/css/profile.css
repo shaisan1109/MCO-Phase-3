@@ -1,0 +1,87 @@
+/* ------- PROFILE PAGE STYLE ------- */
+.profile-container {
+	width: 100%;
+	padding: 50px;
+	display: flex;
+}
+
+
+/* ------- USER INFO ------- */
+.profile-info {
+	width: 25%;
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+.profile-info-container {
+	padding: 25px;
+}
+
+.profile-pfp {
+	text-align: center;
+}
+
+.profile-username {
+	text-align: center;
+	font-weight: 700;
+	font-size: 27px;
+}
+
+.profile-row {
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.profile-row-label {
+	font-family: var(--nav-font);
+	font-size: 10px;
+}
+
+/* ------- POSTS AND COMMENTS ------- */
+.profile-folder {
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	width: 65%;
+}
+
+.folder-tab {
+	background: none;
+	border: none;
+	padding: 12px 60px 12px 60px;
+
+	color: #fff;
+	font-family: var(--nav-font);
+	font-size: 20px;
+}
+.folder-tab:hover {
+	background-color: var(--body-color-lighter);
+	color: #fff;
+}
+.folder-tab.active {
+	background-color: var(--tertiary-color-lighter);
+	color: var(--body-color);
+}
+
+.folder-topic {
+	background: none;
+	font-family: var(--main-font);
+	font-size: 20px;
+	color: var(--main-font-color);
+	text-align: left;
+	margin: 0;
+	width: 100%;
+
+	border: 2px solid var(--border-color);
+}
+.folder-topic:hover {
+	background-color: var(--body-color-lighter);
+}
+
+.folder-title {
+	margin: 0;
+	color: var(--post-title-color);
+}

@@ -1,0 +1,93 @@
+<div id="register" class="overlay">
+    <div class="register-window">
+        <div class="register-content">
+            <a class="close" href=""><i class="fa fa-times"></i></a>
+            <h3 class="register-header">Register</h3><br>
+
+            <form id="create-user" action="/register" method="POST">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 200px">Username</td>
+                        <td class="register-bar-container"><input type="text" name="username" id="username" class="register-bar" placeholder="Username" required></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td class="register-bar-container"><input type="email" name="email" id="email" class="register-bar" placeholder="example@email.com" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td class="register-bar-container"><input type="password" name="password" id="password" class="register-bar" placeholder="Password" required></td>
+                    </tr>
+                    <tr>
+                        <td>Repeat Password</td>
+                        <td class="register-bar-container"><input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" class="register-bar" required></td>
+                    </tr>
+                    <tr>
+                        <td>Pronouns</td>
+                        <td class="register-bar-container"><input type="text" name="pronouns" id="pronouns" placeholder="How can we refer to you?" class="register-bar" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>Tell us about yourself! <i>(optional)</i></p>
+                            <textarea name="description" id="description" class="register-bar" placeholder="I am..." rows="4"></textarea>
+                        </td>
+                    </tr>
+                </table>
+
+                <p><input type="checkbox" id="agreeTerms" class="register-agree" value="agree"> I agree to the <a>terms</a> and <a>privacy policy</a></p>
+                <center><input type="submit" value="REGISTER" class="register-submit"></center>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Check if username exists in db
+
+    // Check if email exists in db
+
+    // Check if password and repeated password are the same
+
+    // User creation checks
+    /* $(document).ready(function () {
+        let username = $('#username').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let passwordRep = $('#passwordRepeat').val();
+        let pronouns = $('#pronouns').val();
+        let description = $('#description').val();
+        let agreeTerms = $('#agreeTerms').val();
+
+        $('#create-user').on('submit', function (event) {
+            // testing
+            const testData = {
+                username: username,
+                login: {
+                    email: email,
+                    password: password,
+                },
+                pronouns: pronouns,
+                description: description
+            };
+            console.log(testData);
+
+            event.preventDefault();
+
+            $.ajax({
+                url: 'http://localhost:3000/user_created',
+                method: 'POST',
+                //contentType: 'application/json',
+                data: {
+                    username: username,
+                    login: {
+                        email: email,
+                        password: password,
+                    },
+                    pronouns: pronouns,
+                    description: description
+                }
+            });
+        });
+    }); */
+</script>

@@ -1,0 +1,21 @@
+<div id="login" class="overlay">
+    <div class="login-window">
+        <div class="login-content">
+            <a class="close" href=""><i class="fa fa-times"></i></a>
+            <h3 class="login-header">Log into your account</h3>
+
+            <!-- Login Form -->
+            <form action="/login" method="POST">
+                <p>Username<br><input type="text" name="username" class="login-bar" placeholder="Username" required></p>
+                <p>
+                    Password<br><input type="password" name="password" class="login-bar" placeholder="Password" required><br>
+                    <text class="login-forgot"><a>Forgot your password?</a></text>
+                </p>
+                <input type="checkbox" name="remember" class="login-remember"> Remember me
+                <p><input type="submit" value="LOG IN" class="login-submit"></p>
+            </form>
+            
+            <p><center>Don't have an account? <a href="#register">Register now.</a></center></p>
+        </div>
+    </div>
+</div>

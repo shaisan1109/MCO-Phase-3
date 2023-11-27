@@ -1,0 +1,37 @@
+/* ------- HELP WINDOW STYLE ------- */
+.form-div {
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 5px;
+	padding: 0;
+}
+
+.terms-conditions {
+	max-height: 300px;
+	padding: 15px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#report-title {
+	width: 90%;
+	min-width: 50px;
+	min-height: 12px;
+	margin-left: 5%;
+}
+
+#report-body {
+	width: 90%;
+	min-width: 50px;
+	min-height: 300px;
+	margin-left: 5%;
+}
+
+#report-submit {
+	width: 40%;
+	margin-left: 30%;
+}
+
+.faq-title {
+	margin: 0;
+}

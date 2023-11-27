@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6556f25cb024b0ed7afa0745"
+  },
+  "title": "Counter-Strike 2",
+  "desc": "Immerse yourself in intense tactical warfare with this first-person shooter from Valve, where teamwork and strategy reign supreme.",
+  "imgURL": "img/thumb_cs2.png"
+},
+{
+  "_id": {
+    "$oid": "6556f25cb024b0ed7afa0746"
+  },
+  "title": "Minecraft",
+  "desc": "Dive into a sandbox adventure like no other, where creativity knows no bounds in this world-building game by Microsoft.",
+  "imgURL": "img/thumb_minecraft.png"
+},
+{
+  "_id": {
+    "$oid": "6556f25cb024b0ed7afa0747"
+  },
+  "title": "Valorant",
+  "desc": "Experience high-stakes, tactical shooter action in this competitive game by Riot Games, combining precise gunplay and unique agent abilities.",
+  "imgURL": "img/thumb_valorant.png"
+},
+{
+  "_id": {
+    "$oid": "6556f25cb024b0ed7afa0748"
+  },
+  "title": "Baldur's Gate III",
+  "desc": "Embark on an epic journey in this role-playing game from Larian Studios, filled with rich storytelling and challenging quests in a Dungeons & Dragons universe.",
+  "imgURL": "img/thumb_baldursgate3.jpg"
+},
+{
+  "_id": {
+    "$oid": "6556f25cb024b0ed7afa0749"
+  },
+  "title": "League of Legends",
+  "desc": "Join the battle in the world's most popular multiplayer online battle arena (MOBA) game from Riot Games, where strategy and teamwork are essential for victory.",
+  "imgURL": "img/thumb_league.png"
+}]

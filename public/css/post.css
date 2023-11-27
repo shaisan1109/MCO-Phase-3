@@ -1,0 +1,132 @@
+/* ------- USER POST ------- */
+.userpost-title {
+	padding: 0px 50px 0px 50px;
+}
+
+.userpost-container {
+	width: 100%;
+	padding: 0px 50px 50px 50px;
+	display: flex;
+}
+
+.comment-container {
+	width: 100%;
+	padding: 0px 50px 50px 50px;
+	display: flex;
+}
+
+/* ------- USER INFO ------- */
+.op-info {
+	width: 15%;
+	height: 25%;
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+.op-info-container {
+	padding: 15px;
+}
+
+.op-pfp {
+	margin: auto;
+	width: 100px;
+}
+
+.op-username {
+	text-align: center;
+	font-weight: 700;
+	font-size: 20px;
+}
+.op-username a {
+	text-decoration: none;
+	color: var(--post-title-color);
+}
+
+.op-marker {
+	text-align: center;
+	background-color: var(--tertiary-color);
+	color: var(--body-color);
+	font-weight: 700;
+	font-size: 12px;
+	border-radius: 8px;
+}
+
+.op-row {
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.op-row-label {
+	font-family: var(--nav-font);
+	font-size: 9px;
+}
+
+/* ------- MAIN POST ------- */
+.userpost {
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	width: 75%;
+}
+
+.userpost-content {
+	padding: 15px;
+	font-size: 18px;
+}
+
+.userpost-footer {
+	display: flex;
+	border-top: 2px solid var(--border-color);
+	padding: 15px;
+	background-color: var(--body-color-lighter);
+}
+
+.userpost-date {
+	margin-left: auto;
+}
+
+/* ------- COMMENTS ------- */
+.comment {
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	width: 75%;
+}
+
+.comment-container {
+	display: block;
+}
+
+.comment-content {
+	padding: 15px;
+	font-size: 18px;
+}
+
+.comment-footer {
+	display: flex;
+	border-top: 2px solid var(--border-color);
+	padding: 15px;
+	background-color: var(--body-color-lighter);
+}
+
+.comment-date {
+	margin-left: auto;
+}
+
+/* ------- REPLY ------- */
+.reply {
+	background-color: var(--body-color-lighter);
+	padding: 10px;
+	font-style: italic;
+}
+
+.reply-who {
+	margin: 0;
+}
+
+.reply-who a {
+	text-decoration: none;
+	color: var(--post-title-color);
+}

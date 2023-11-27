@@ -1,0 +1,82 @@
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+<h1 class="userpost-title">{{post.title}}</h1>
+<div class="userpost-container">
+    <!-- User Info -->
+    <div class="op-info">
+        <div class="op-info-container">
+            <div class="op-pfp">
+                <img src="/img/{{user.pfpURL}}" class="op-pfp">
+            </div>
+            <div class="op-username"><a href="/user/{{post.user}}">{{post.user}}</a></div>
+            <div class="op-marker">ORIGINAL POSTER</div>
+
+            <div class="op-row">
+                <div class="op-row-label">JOINED</div>
+                <div id="join-date">{{user.joined}}</div>
+            </div>
+            <div class="op-row">
+                <div class="op-row-label">LAST ACTIVE</div>
+                <div id="last-active">{{user.lastActive}}</div>
+            </div>
+            <div class="op-row">
+                <div class="op-row-label">PRONOUNS</div>
+                <div id="gender">{{user.pronouns}}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Post -->
+    <div class="userpost">
+        <div class="userpost-content">
+            {{{post.content}}}
+        </div>
+        <div class="userpost-footer">
+            <div class="userpost-points"><i class="fa fa-thumbs-up"> | </i> <i class="fa fa-thumbs-down"></i> {{post.points}} points</div>
+            <div class="userpost-date">{{post.timePosted}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="comment-container">
+    <!-- User Info -->
+
+    {{#each commenters}}
+        <div class="op-info">
+            <div class="op-info-container">
+                <div class="op-pfp">
+                    <img src="/img/{{pfpURL}}" width="100">
+                </div>
+                <div class="op-username"><a href="/user/{{user}}">mco_taker</a></div>
+
+                <div class="op-row">
+                    <div class="op-row-label">JOINED</div>
+                    <div id="join-date">{{joined}}</div>
+                </div>
+                <div class="op-row">
+                    <div class="op-row-label">LAST ACTIVE</div>
+                    <div id="last-active">{{lastActive}}</div>
+                </div>
+                <div class="op-row">
+                    <div class="op-row-label">PRONOUNS</div>
+                    <div id="gender">{{pronouns}}</div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+
+    {{#each comments}}
+        <div class="comment">
+            <div class="comment-content">
+                {{content}}
+            </div>
+            <div class="comment-footer">
+                <div class="comment-points"><i class="fa fa-thumbs-up"> | </i> <i class="fa fa-thumbs-down"></i> {{points}} points</div>
+                <div class="comment-date">{{timePosted}}</div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<!-- Create comment form -->
+{{> createComment}}

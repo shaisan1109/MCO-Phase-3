@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{ title }} | LevelUpLounge</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/banner.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<a href="/" style="text-decoration:none"><h1 class="title">LevelUpLounge</h1></a>
+	</header>
+
+	{{> nav}}
+
+	<main>
+		{{{ body }}}
+	</main>
+
+	{{> login}}
+
+	{{> register}}
+
+	<footer>
+		CCAPDEV Major Course Requirement - Term 1 (A.Y. 2023-2024)<br>
+		S17 Group 13 | Jason Rafael Dayrit | Luis Gabriel Maloles | Jose Lorenzo Santos | Shaira Polyn Santos
+	</footer>
+
+	<script type="text/javascript" src="/js/sticky_nav.js"></script>
+</body>	
+
+</html>

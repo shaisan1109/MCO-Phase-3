@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "654e19fb25ba041cfe708376"
+  },
+  "username": "JuanDelaCru5",
+  "description": "Proud Filipino. Casual gamer. Looking forward to meeting fellow gamers. (My username isn't my real name btw. It's a Filipino in-joke.)",
+  "joined": "June 12, 2023",
+  "lastActive": "Currently active",
+  "pronouns": "He/Him",
+  "login": {
+    "email": "everyJuan@email.com",
+    "password": "m0arfun1nph1ls"
+  },
+  "pfpURL": "user_JuanDelaCru5.png"
+},
+{
+  "_id": {
+    "$oid": "654e1a1b25ba041cfe708378"
+  },
+  "username": "mco_taker",
+  "description": "Hello! I'm one of the developers of this forum. Feel free to PM me for any issues.",
+  "joined": "December 15, 2021",
+  "lastActive": "Currently active",
+  "pronouns": "They/Them",
+  "login": {
+    "email": "computerluvr@gmail.com",
+    "password": "ccapdev2023"
+  },
+  "pfpURL": "user_mco_taker.jpg"
+},
+{
+  "_id": {
+    "$oid": "654e1a3225ba041cfe70837a"
+  },
+  "username": "nodJS",
+  "description": "computer enthusiast! love programming and playing games in my free time. speedrunning life any%",
+  "joined": "January 1, 2022",
+  "lastActive": "5 minutes ago",
+  "pronouns": "He/Him",
+  "login": {
+    "email": "node_js@yahoo.com",
+    "password": "node!is!fun!"
+  },
+  "pfpURL": "user_nodJS.jpg"
+},
+{
+  "_id": {
+    "$oid": "654e1a4425ba041cfe70837c"
+  },
+  "username": "shrek13",
+  "description": "somebody once told me the world is gonna roll me",
+  "joined": "June 9, 2022",
+  "lastActive": "8 hours ago",
+  "pronouns": "They/Them",
+  "login": {
+    "email": "somebodyoncetoldme@outlook.com",
+    "password": "thew0rldisg0nnar0llme"
+  },
+  "pfpURL": "user_shrek13.jpg"
+},
+{
+  "_id": {
+    "$oid": "654e1a5025ba041cfe70837e"
+  },
+  "username": "popcat",
+  "description": "Hello °˖✧◝(⁰▿⁰)◜✧˖° I mostly play mobile games or anything else that catches my eye.",
+  "joined": "November 2, 2022",
+  "lastActive": "1 day ago",
+  "pronouns": "She/Her",
+  "login": {
+    "email": "pops1cl@gmail.com",
+    "password": "iloveg4ems"
+  },
+  "pfpURL": "user_popcat.jpg"
+}]

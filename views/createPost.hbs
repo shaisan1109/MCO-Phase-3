@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="/css/createPost.css">
+
+<div class="post-container">
+    <form id="post-form" method="POST"> <!-- place action and method later -->
+        <div class="banner" style="background-image: url('img/banner_keyboard.png');">
+            <h1>Create a post</h1>
+        </div>
+
+        <table class="post-table">
+            <tr>
+                <td style="width: 200px">Title</td>
+                <td><input type="text" name="title" id="title" placeholder="Title" class="post-bar" required></td>
+            </tr>
+            <tr>
+                <td>Short Description</td>
+                <td><input type="text" name="shortDesc" id="short-desc" class="post-bar" placeholder="This post is about..."></td>
+            </tr>
+        </table>
+
+        <textarea name="content" id="content" placeholder="Content" class="post-bar" rows="5" required></textarea>
+
+        <center><input type="submit" class="post-submit" value="POST"></center>
+    </form>
+</div>

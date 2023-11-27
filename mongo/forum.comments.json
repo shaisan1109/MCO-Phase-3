@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6559d080798327cd4db04f83"
+  },
+  "user": "mco_taker",
+  "postID": "655826197ecf3448a7fa854d",
+  "content": "Whoa, I didn't know CS2 had a lot in common with CS:GO! Time for me to try playing CS2. Unfortunately I got no tips yet. You can tell from what I've mentioned before that I haven't played CS2 yet. Will take note of your tips, though.",
+  "points": 13,
+  "timePosted": "2023-09-30, 6:45 PM"
+},
+{
+  "_id": {
+    "$oid": "6559d39c798327cd4db04f8b"
+  },
+  "user": "mco_taker",
+  "postID": "655826197ecf3448a7fa854e",
+  "content": "Worry not, popcat! The code monkeys will find a way to add image uploads as you wish! *cries in time constraints*",
+  "points": 3567,
+  "timePosted": "2023-05-03, 8:32 AM"
+},
+{
+  "_id": {
+    "$oid": "655b5946c697a6c563999bca"
+  },
+  "user": "popcat",
+  "postID": "655826197ecf3448a7fa854e",
+  "content": "Thanks, whoever you are! I understand. ouo",
+  "points": 0,
+  "timePosted": "2023-11-20T13:04:06.108Z",
+  "createdAt": {
+    "$date": "2023-11-20T13:04:06.113Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-20T13:04:06.113Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655b7dfd7f9fdab669c0f56b"
+  },
+  "user": "JuanDelaCru5",
+  "postID": "655b5f0e7f9fdab669c0f55f",
+  "content": "Our user info isn't showing up in comments yet. Weird...",
+  "points": 0,
+  "timePosted": "2023-11-20T20:04:06.108Z"
+},
+{
+  "_id": {
+    "$oid": "655b7e307f9fdab669c0f56c"
+  },
+  "user": "nodJS",
+  "postID": "655b5f0e7f9fdab669c0f55f",
+  "content": "Patience is a virtue, 'pre.",
+  "points": 0,
+  "timePosted": "2023-11-20T20:04:10.108Z"
+}]

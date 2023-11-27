@@ -1,0 +1,82 @@
+
+<div class="banner" style="background-image: url('img/banner_welcome.jpg');">
+	<h1>Welcome to LevelUpLounge!</h1>
+	<p>We are a tight-knit community of gamers on a happy corner of the Internet.</p>
+	<a href="#register"><button class="banner-button">Join the lounge</button></a>
+</div>
+
+<div class="forum-section">
+	<details open>
+		<summary class="section-head">COMMUNITY</summary>
+
+		{{#each community}}
+			<button class="section-topic">
+				<img src="img/thumb_default.jpg" class="post-thumb">
+				<p>
+					<h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+					{{shortDesc}}<br>
+					<small class="post-details">Posted by <b><a href="/user/{{user}}">{{user}}</a></b> on {{timePosted}}</small>
+				</p>
+			</button>
+		{{/each}}
+	</details>
+</div>
+
+<div class="forum-section" id="trending">
+	<details open>
+		<summary class="section-head">TRENDING GAMES</summary>
+
+		{{#each trending}}
+			<button class="section-topic">
+				<img src="{{imgURL}}" class="post-thumb">
+				<p>
+					<h4 class="post-title">{{title}}</h4>
+					{{desc}}
+				</p>
+			</button>
+		{{/each}}
+	</details>
+</div>
+
+<div class="forum-section">
+	<details open>
+		<summary class="section-head">POPULAR THREADS</summary>
+		
+		{{#each popular}}
+			<button class="section-topic">
+				<img src="img/thumb_default.jpg" class="post-thumb">
+				<p>
+					<h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+					{{shortDesc}}<br>
+					<small class="post-details">Posted by <b><a href="/user/{{user}}">{{user}}</a></b> on {{timePosted}}</small>
+				</p>
+			</button>
+		{{/each}}
+		<a href="/popular"><button class="section-topic">
+			<p>
+				<center>SEE MORE</center>
+			</p>
+		</button></a>
+	</details>
+</div>
+
+<div class="forum-section">
+	<details open>
+		<summary class="section-head">WHAT'S NEW</summary>
+		{{#each recent}}
+			<button class="section-topic">
+				<img src="img/thumb_default.jpg" class="post-thumb">
+				<p>
+					<h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+					{{shortDesc}}<br>
+					<small class="post-details">Posted by <b><a href="/user/{{user}}">{{user}}</a></b> on {{timePosted}}</small>
+				</p>
+			</button>
+		{{/each}}
+		<a href="/new"><button class="section-topic">
+			<p>
+				<center>SEE MORE</center>
+			</p>
+		</button></a>
+	</details>
+</div>
