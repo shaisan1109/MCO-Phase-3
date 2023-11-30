@@ -163,8 +163,73 @@ nav {
 
 /* ------- CREATE POST ------- */
 /* Supposedly shows up only when logged in */
-.create-btn-container {
+.push-right {
 	margin-left: auto;
+}
+
+/* User menu dropdown */
+.user-nav-name {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.user-nav-pfp {
+	margin-right: 10px;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: var(--main-font-color);
+	background-color: inherit;
+	font-family: inherit;
+}
+
+.dropbtn {
+	display: flex;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: var(--tertiary-color);
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Create Post Button */
+.create-btn-container {
+	padding-left: 10px;
 }
 
 .create-post-btn {
