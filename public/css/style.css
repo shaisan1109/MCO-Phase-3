@@ -370,6 +370,11 @@ main {
 }
 
 /* ------- REGISTER WINDOW STYLE ------- */
+.err-text {
+	color: red;
+	font-style: italic;
+}
+
 .register-window-container {
 	width: 100%;
 	padding: 50px;

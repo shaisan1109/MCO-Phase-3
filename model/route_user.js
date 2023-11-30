@@ -11,6 +11,42 @@ router.get('/user/:username', (req, res) => {
     });
 });
 
+// GET one user thru username (but for registration)
+router.get('/register', async function(req, res) {
+  // your code here
+  try {
+      const user = await User.findOne({ username: req.query.username }).exec();
+      console.log(user);
+      if (user) {
+          res.sendStatus(409);
+      }
+      else {
+          res.sendStatus(200);
+      }
+  } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+  }
+});
+
+// GET one user thru email (for registration)
+router.get('/register', async function(req, res) {
+  // your code here
+  try {
+      const user = await User.findOne({ 'login.email': req.query.email }).exec();
+      console.log(user);
+      if (user) {
+          res.sendStatus(409);
+      }
+      else {
+          res.sendStatus(200);
+      }
+  } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+  }
+});
+
 // POST (create) user
 router.post('/user_created', (req, res) => {
   const user = new User({
