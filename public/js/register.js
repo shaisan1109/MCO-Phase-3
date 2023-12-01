@@ -11,6 +11,7 @@ const registerBtn = document.querySelector('#register-submit');
 // Form error text
 const err_regUsername = document.querySelector('#reg-username-err');
 const err_regEmail = document.querySelector('#reg-email-err');
+const err_regPass = document.querySelector('#reg-password-err');
 const err_regRepPass = document.querySelector('#reg-rep-password-err');
 const err_regDesc = document.querySelector('#reg-description-err');
 
@@ -57,8 +58,26 @@ regEmail?.addEventListener("keyup", async function (e) {
     }
 });
 
+// Check if password is less than 8 chars
+regPass?.addEventListener("keyup", async function (e) {
+    const regPassVal = regPass.value;
+
+    try {
+        if(regPassVal.length >= 8) {
+            err_regPass.innerText = '';
+            registerBtn.disabled = false;
+        }
+        else { // password is less than 8 chars
+            err_regPass.innerText = 'Password must be at least 8 characters.';
+            registerBtn.disabled = true;
+        }
+    } catch (err) {
+        console.error(err);
+    }
+});
+
 // Check if password and repeat password are the same
-regRepPass?.addEventListener("input", async function (e) {
+regRepPass?.addEventListener("keyup", async function (e) {
     const regPassVal = regPass.value;
     const regRepPassVal = regRepPass.value;
 
