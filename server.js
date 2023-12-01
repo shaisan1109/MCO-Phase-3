@@ -41,7 +41,8 @@ import getUser from './model/controller_user.js';
 
 import {
     getCommentOfPost,
-    getCommentsWithKeyword
+    getCommentsWithKeyword,
+    getCommentsByUser
 } from './model/controller_comment.js';
 
 const app = express();
@@ -147,8 +148,14 @@ app.post('/post/:id', async (req, res) => {
 app.get('/user/:username', async (req, res) => {
     const user = await getUser(req.params.username);
     const userPost = await getPostByUser(req.params.username);
+    const userComment = await getCommentsByUser(req.params.username);
 
-    res.render('user', { title: req.params.username, user: user, userPost: userPost });
+    res.render('user', {
+        title: req.params.username,
+        user,
+        userPost,
+        userComment
+    });
 });
 
 // User object

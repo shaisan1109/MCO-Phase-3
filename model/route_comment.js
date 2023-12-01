@@ -30,6 +30,14 @@ router.get('/search', async (req, res) => {
     }
   });
 
+// GET comments by a certain user
+router.get('/user/:username', (req, res) => {
+  Comment.find({ user: req.params.username }).then((comment) => {
+    res.json(comment);
+    res.end();
+  });
+});
+
 // POST comment under reply
 router.post('/post/:id', async (req, res) => {
   const { content } = req.body;

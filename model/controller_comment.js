@@ -10,7 +10,13 @@ export const getCommentsWithKeyword = async (q) => {
 	return comment;
 }
 
+export const getCommentsByUser = async (username) => {
+	const comment = await Comment.find({ user: username }).lean();
+	return comment;
+};
+
 export default {
 	getCommentOfPost,
-	getCommentsWithKeyword
+	getCommentsWithKeyword,
+	getCommentsByUser
 };

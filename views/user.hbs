@@ -34,30 +34,35 @@
         
         <div id="folder-posts" class="folder-content">
             {{#each userPost}}
-                <a href="/post/{{_id}}"><button class="folder-topic">
+                <button class="section-topic">
                     <p>
-                        <h3 class="folder-title">{{title}}</h3>
-                        {{shortDesc}}
+                        <h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+                        {{shortDesc}}<br>
+                        <small class="post-details">Posted on {{timePosted}}</small>
+                    </p>
+                </button>
+            {{/each}}
+        </div>
+
+        <div id="folder-comments" class="folder-content">
+            {{#each userComment}}
+                <a href="/post/{{postID}}"><button class="section-topic">
+                    <p>
+                        {{content}}<br>
+                        <small class="post-details">Posted on {{timePosted}}</small>
                     </p>
                 </button></a>
             {{/each}}
         </div>
 
-        <div id="folder-comments" class="folder-content">
+        {{!-- <div id="folder-comments" class="folder-content">
             <a href="/post/counter_strike_2_strategy_discussion.html"><button class="folder-topic">
                 <p>
                     <h3 class="folder-title">Counter-Strike 2 Strategy and Discussion</h3>
                     Whoa, I didn't know CS2 had a lot in common with CS:GO! Time for me to try playing CS2. Unfortunately I got no tips yet. You can tell from what I've mentioned before that I haven't played CS2 yet. Will take note of your tips, though.
                 </p>
             </button></a>
-
-            <a href="/post/minecraft_showcase.html"><button class="folder-topic">
-                <p>
-                    <h3 class="folder-title">Minecraft Building Showcase</h3>
-                    I can't believe my childhood game is trending again. That's how the Internet works, I guess. Anyway, feast your eyes on my redstone masterpiece! This is why you don't hand over a PC to a computer science graduate. (lol)
-                </p>
-            </button></a>
-        </div>
+        </div> --}}
     </div>
 </div>
 <script src="/js/profile_tab.js"></script>
