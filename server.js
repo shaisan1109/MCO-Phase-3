@@ -16,6 +16,7 @@ import mongoose from 'mongoose';
 // Others
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import bcrypt from 'bcrypt';
 
 // DB Routes
 import trendingRoutes from './model/route_trending.js';
@@ -163,11 +164,13 @@ import User from './model/schema_user.js' // user model
 
 // Register form
 app.post('/register', async (req, res) => {
+    const hashedPass = await bcrypt.hash(req.body.password, 10);
+
     const user = new User({
         username: req.body.username,
         login: {
             email: req.body.email,
-            password: req.body.password
+            password: hashedPass
         },
         pronouns: req.body.pronouns,
         description: req.body.description
