@@ -100,9 +100,9 @@ app.get('/new', async (req, res) => {
     res.render('new', { title: 'Recent Posts', recent: recent });
 });
 
-// Help page
-app.get('/help', (req, res) => {
-    res.render('help', { title: 'Help' });
+// About page
+app.get('/about', (req, res) => {
+    res.render('about', { title: 'About' });
 });
 
 // Post (with comments)
