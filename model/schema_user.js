@@ -16,10 +16,6 @@ const userSchema = new Schema({
 		type: String,
 		//required: true
 	},
-	lastActive: {
-		type: String,
-		//required: true
-	},
 	pronouns: {
 		type: String,
 		required: true
