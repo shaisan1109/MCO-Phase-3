@@ -5,10 +5,12 @@ const { Schema, model } = mongoose;
 const userSchema = new Schema({
 	username: {
 		type: String,
-		required: true
+		required: true,
+		unique: true
 	},
 	description: {
-		type: String
+		type: String,
+		maxLength: 300
 	},
 	joined: {
 		type: String,

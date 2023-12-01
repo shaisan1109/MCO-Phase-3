@@ -3,9 +3,6 @@ import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
 const postSchema = new Schema({
-	// _id: {
-	// 	type: Schema.Types.ObjectId
-	// },
 	user: {
 		type: String,
 		required: true

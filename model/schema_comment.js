@@ -3,16 +3,13 @@ import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
 const commentSchema = new Schema({
-	// _id: {
-	// 	type: Schema.Types.ObjectId
-	// },
 	user: {
 		type: String,
 		required: true
 	},
 	postID: {
 		type: String,
-		//required: true
+		required: true
 	},
 	content: {
 		type: String,
@@ -24,7 +21,7 @@ const commentSchema = new Schema({
 	},
 	timePosted: {
 		type: String,
-		//required: true
+		required: true
 	}
 }, { timestamps: true });
 
