@@ -1,0 +1,80 @@
+/* ------- EDIT PROFILE STYLE ------- */
+.edit-all-container {
+	width: 100%;
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	margin-right: 20px;
+	display: flex;
+	font-size: 20px;
+}
+
+.edit-prof-right {
+	margin-bottom: 30px;
+}
+
+.pfp-container {
+	padding: 50px;
+}
+
+.profile-pfp {
+	text-align: center;
+}
+
+.profile-username {
+	text-align: center;
+	font-weight: 700;
+	font-size: 27px;
+}
+
+.profile-row {
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.profile-row-label {
+	font-family: var(--nav-font);
+	font-size: 10px;
+}
+
+.edit-profile-bar {
+	font-family: var(--main-font);
+	font-size: 18px;
+	border-radius: 5px;
+	outline: none;
+	border: 2px solid white;
+	width: 100%;
+}
+.edit-profile-bar:focus {
+	box-shadow: 0 0 10px 5px var(--tertiary-color);
+	outline: none;
+	border: 2px solid white;
+}
+
+.change-password {
+	background-color: var(--tertiary-color);
+	font-family: var(--nav-font);
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	width: 70%;
+	padding: 5px;
+}
+.change-password:hover {
+	background-color: var(--tertiary-color-lighter);
+}
+
+.change-username {
+	background-color: var(--tertiary-color);
+	font-family: var(--nav-font);
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	width: 100%;
+	padding: 5px;
+}
+.change-username:hover {
+	background-color: var(--tertiary-color-lighter);
+}

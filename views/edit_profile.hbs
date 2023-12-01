@@ -1,0 +1,61 @@
+<link rel="stylesheet" type="text/css" href="/css/edit_profile.css">
+
+<div class="edit-user-container">
+    <div class="banner" style="background-image: url('img/banner_editprofile.jpg'); margin-bottom: 15px">
+        <h1>Edit Profile</h1>
+    </div>
+
+    <div class="edit-all-container">
+        <!-- User pfp and username -->
+        <div class="pfp-container">
+            <div class="profile-pfp">
+                <img src="/img/user_default.jpg" width="200">
+            </div>
+            <div class="profile-username">userName</div>
+            <button class="change-username">CHANGE USERNAME</button>
+        </div>
+
+        <div class="edit-prof-right">
+            <!-- Login details -->
+            <div class="login-details-container">
+                <h2>Login Details</h2>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td style="width:350px">
+                            <input type="text" name="edit-email" id="edit-email" class="edit-profile-bar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:150px">Password</td>
+                        <td>
+                            <a href="/change_password"><button class="change-password">CHANGE PASSWORD</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- User details -->
+            <div class="user-details-container">
+                <h2>User Details</h2>
+                <table>
+                    <tr>
+                        <td style="width:50px">Pronouns</td>
+                        <td style="width:350px"><input type="text" name="edit-pronouns" id="edit-pronouns" class="edit-profile-bar" style="width:150px"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Description<br>
+                            <textarea name="edit-description" id="edit-description" class="edit-profile-bar" style="width:775px" rows="4"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Save changes / Edit profile submit -->
+            <p>
+                <input type="submit" class="change-password" value="SAVE CHANGES">
+            </p>
+        </div>
+    </div>
+</div>

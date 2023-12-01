@@ -265,6 +265,11 @@ app.get('/search', async (req, res) => {
     }
 });
 
+// Edit profile page
+app.get('/edit_profile', (req, res) => {
+    res.render('edit_profile', { title: 'Edit Profile' });
+});
+
 /* -------- BACKEND ROUTES -------- */
 app.use(trendingRoutes);
 app.use(postRoutes);
