@@ -1,32 +1,41 @@
 <nav>
     <a href="/"><button class="navbutton">HOME</button></a>
     <a href="/about"><button class="navbutton">ABOUT</button></a>
-    <a href="#login"><button class="navbutton">LOGIN</button></a>
-    <a href="#register"><button class="navbutton">REGISTER</button></a>
+
+    {{#if authenticated}}
+        <a href="/logout"><button class="navbutton">LOGOUT</button></a>
+        {{else}}
+        <a href="#login"><button class="navbutton">LOGIN</button></a>
+        <a href="#register"><button class="navbutton">REGISTER</button></a>
+    {{/if}}
+
     <a href="/search?type=post"><button class="navbutton"><i class="fa fa-search"></i>&nbsp; BROWSE</button></a>
 
-    <div class="push-right"></div>
+    <!-- Only show the following if user is logged in -->
+    {{#if authenticated}}
+        <div class="push-right"></div>
 
-    <div class="dropdown">
-        <button class="dropbtn">
-            <img src="/img/user_default.jpg" height="30px" class="user-nav-pfp">
-            <text class="user-nav-name">
-                userName &nbsp;
-                <i class="fa fa-caret-down"></i>
-            </text>
-        </button>
+        <div class="dropdown">
+            <button class="dropbtn">
+                <img src="/img/user_default.jpg" height="30px" class="user-nav-pfp">
+                <text class="user-nav-name">
+                    {{username}} &nbsp;
+                    <i class="fa fa-caret-down"></i>
+                </text>
+            </button>
 
-        <!-- links are subject to change -->
-        <div class="dropdown-content">
-            <a href="/user/username"><i class="fa fa-user"></i>&nbsp; View Profile</a>
-            <a href="/edit_profile"><i class="fa fa-edit"></i>&nbsp; Edit Profile</a>
-            <a href="/logout"><i class="fa fa-power-off"></i>&nbsp; Log Out</a>
+            <!-- links are subject to change -->
+            <div class="dropdown-content">
+                <a href="/user/{{username}}"><i class="fa fa-user"></i>&nbsp; View Profile</a>
+                <a href="/edit_profile"><i class="fa fa-edit"></i>&nbsp; Edit Profile</a>
+                <a href="/logout"><i class="fa fa-power-off"></i>&nbsp; Log Out</a>
+            </div>
         </div>
-    </div>
 
-    <a href="/create_post" class="create-btn-container">
-        <button class="create-post-btn">
-            <i class="fa fa-plus"></i>&nbsp; CREATE POST
-        </button>
-    </a>
+        <a href="/create_post" class="create-btn-container">
+            <button class="create-post-btn">
+                <i class="fa fa-plus"></i>&nbsp; CREATE POST
+            </button>
+        </a>
+    {{/if}}
 </nav>

@@ -64,12 +64,24 @@ app.use(session ({
     store: store
 }));
 
+app.use((req, res, next) => {
+    res.locals.user = req.session.user,
+    res.locals.authenticated = req.session.authenticated
+    next();
+})
+
 /* -------- HANDLEBARS SETTINGS -------- */
 // Import public folder
 app.use(express.static('public'));
 
+// Create Handlebars object
+const Handlebars = expressHbs.create({
+    extname: '.hbs',
+    defaultLayout: 'main'
+});
+
 // Use .hbs as handlebars file
-app.engine('.hbs', expressHbs.engine({ extname: '.hbs', defaultLayout: 'main' }));
+app.engine('.hbs', Handlebars.engine);
 app.set('view engine', '.hbs');
 
 /* -------- FRONTEND ROUTES -------- */
@@ -80,12 +92,21 @@ app.get('/', async (req, res) => {
     const recent = await home_getRecentPosts();
     const community = await home_getCommunityPosts();
 
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
     res.render('index', {
         title: 'Home',
         trending: trending, // trending games
         popular: popular, // popular posts
         recent: recent, // recent posts
-        community: community
+        community: community,
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
     });
 });
 
