@@ -134,6 +134,8 @@ nav {
 	display: flex;
 	border-top: 2px solid var(--border-color);
 	border-bottom: 2px solid var(--border-color);
+	background-color: var(--body-color);
+	z-index: 99;
 }
 
 .sticky {
