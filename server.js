@@ -212,16 +212,29 @@ app.post('/login', async (req, res) => {
         // If user exists
         if(user) {
             // If passwords match
-            if(user.login.password === req.body.password) {
-                req.session.authenticated = true;
-                req.session.user = {
-                    username: user.username,
-                    userId: user._id
-                };
-                res.redirect('/');
-            } else {
-                res.send("Wrong password!");
-            }
+            bcrypt.compare(password, user.login.password).then(result => {
+                if(result) {
+                    req.session.authenticated = true;
+                    req.session.user = {
+                        username: user.username,
+                        userId: user._id
+                    };
+                    res.redirect('/');
+                } else {
+                    res.send("Wrong password!");
+                }
+            });
+
+            // if(user.login.password === req.body.password) {
+            //     req.session.authenticated = true;
+            //     req.session.user = {
+            //         username: user.username,
+            //         userId: user._id
+            //     };
+            //     res.redirect('/');
+            // } else {
+            //     res.send("Wrong password!");
+            // }
         } else { // user does not exist
             res.send('Username does not exist.');
         }
