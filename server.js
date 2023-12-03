@@ -65,6 +65,13 @@ app.use(session ({
 }));
 
 app.use((req, res, next) => {
+    if (req.session.authenticated) {
+        req.user = req.session.user;
+    }
+    next();
+});
+
+app.use((req, res, next) => {
     res.locals.user = req.session.user,
     res.locals.authenticated = req.session.authenticated
     next();
