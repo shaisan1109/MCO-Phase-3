@@ -119,15 +119,30 @@ router.put('/edit/:id', async (req, res) => {
   }
 });
 
-// DELETE route to delete a post
-router.delete('/delete/:id', async (req, res) => {
+// get route to delete a post
+router.get('/delete/:id', async (req, res) => {
   try {
-    const postId = req.params.id;
-    await Post.findByIdAndDelete(postId);
-    res.status(200).json({ message: 'Post deleted successfully' });
+      const postId = req.params.id;
+
+      // Fetch the post
+      const post = await Post.findById(postId);
+      if (!post) {
+          return res.status(404).send('Post not found');
+      }
+
+      // Check if the logged-in user is the author of the post
+      // Compare the username in the post with the username in the session
+      if (req.user && post.user === req.user.username) {
+          await Post.findByIdAndDelete(postId);
+          res.redirect('/'); // Redirect to homepage or some confirmation page
+      } else {
+          res.status(403).send('You are not authorized to delete this post');
+      }
   } catch (error) {
-    res.status(500).json({ error: true, message: 'Internal Server Error' });
+      res.status(500).json({ error: true, message: 'Internal Server Error' });
   }
 });
+
+
 
 export default router;
