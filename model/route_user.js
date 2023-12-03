@@ -79,4 +79,22 @@ router.put('/user_update', async(req, res) => {
   }
 });
 
+// User logout
+router.get('/logout', (req, res) => {
+  if (req.session) {
+      // Destroy the session
+      req.session.destroy(err => {
+          if (err) {
+              res.status(500).send('Error while logging out');
+          } else {
+              // Redirect to homepage or login page after logout
+              res.redirect('/');
+          }
+      });
+  } else {
+      // If wla session, just redirect
+      res.redirect('/');
+  }
+});
+
 export default router;
