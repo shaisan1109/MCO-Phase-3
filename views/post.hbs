@@ -28,7 +28,14 @@
             {{{post.content}}}
         </div>
         <div class="userpost-footer">
-            <div class="userpost-points"><i class="fa fa-thumbs-up" id="upvote"> | </i> <i class="fa fa-thumbs-down" id="downvote"></i> {{post.points}} points</div>
+            <div class="userpost-points">
+                <button id="upvote" class="vote">
+                    <i class="fa fa-thumbs-up"></i>
+                </button> | 
+                <button id="downvote" class="vote">
+                    <i class="fa fa-thumbs-down"></i>
+                </button>
+                 {{post.points}} points</div>
             <div class="userpost-date">{{post.timePosted}}</div>
         </div>
     </div>

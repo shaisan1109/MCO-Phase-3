@@ -1,7 +1,7 @@
-const upvote = document.getElementById("upvote");
-const downvote = document.getElementById("downvote");
+const upvote = document.querySelector("#upvote");
+const downvote = document.querySelector("#downvote");
 
-upvote.addEventListener("click", async function(){
+upvote.addEventListener("click", async function() {
     const title = document.getElementsByClassName('userpost-title');
     const score = 1;
     const post = {title: title, score: score}

@@ -146,3 +146,20 @@
 	text-decoration: none;
 	color: var(--post-title-color);
 }
+
+/* ------- UPVOTE/DOWNVOTE ------- */
+.vote {
+	background-color: var(--tertiary-color);
+	border: none;
+}
+.vote:hover {
+	background-color: var(--tertiary-color-lighter);
+}
+
+.fa-thumbs-up {
+	font-size: large;
+}
+
+.fa-thumbs-down {
+	font-size: large;
+}
