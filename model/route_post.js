@@ -90,19 +90,22 @@ router.get('/search', async (req, res) => {
   }
 });
 
-// // POST (create) post
-// router.post('/posts', (req, res) => {
-//     const post = new Post({
-//       user: req.body.user,
-//       op: req.body.op,
-//       title: req.body.title,
-//       content: req.body.content,
-//       points: req.body.points,
-//       timePosted: req.body.timePosted
-//     });
-//     post.save();
-//     res.json({ message: "Created post" });
-// });
+// PUT update post score
+router.put('/post', async (req, res) => {
+  const title = req.body.title;
+  const score = req.body.score;
+  let post = await Post.findOne({title: title});
+  let updatedPost = Post.updateOne({title: title}, {score: (post + score)});
+  try{
+    res.status(200).json({message: 'Post voted succesfully'});
+    const response = { error: false, updatedPost};
+    res.status(200).json(response);
+    res.end();
+  } catch (error) {
+    res.status(500).json({error: true, message: 'Internal Server Error'});
+    res.end();
+  }
+});
 
 // PATCH (update) one post
 // router.patch('/post/:id', updatePost);
