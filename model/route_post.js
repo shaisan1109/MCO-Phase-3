@@ -93,20 +93,22 @@ router.get('/search', async (req, res) => {
 // PATCH post score to upvote
 router.patch('/post/:id', async (req, res) => {
   const id = req.params.id;
-  const addedPoints = req.body.upvote;
+  const addedPoints = req.body.score;
 
   // Post to upvote/downvote
   const post = await Post.findOne({ _id: id }); // to retrieve original post points
   const updatedPost = await Post.findOneAndUpdate({ _id: id }, { points: (post.points + addedPoints) });
 
   try {
-    res.status(200).json({ message: 'Post upvoted succesfully' });
+    // res.status(200).json({ message: 'Post upvoted succesfully' });
 
-    const response = { error: false, updatedPost };
-    res.status(200).json(response);
+    // const response = { error: false, updatedPost };
+    // res.status(200).json(response);
+    res.send(200);
     res.end();
   } catch (error) {
-    res.status(500).json({ error: true, message: 'Internal Server Error' });
+    // res.status(500).json({ error: true, message: 'Internal Server Error' });
+    res.send(500);
     res.end();
   }
 });

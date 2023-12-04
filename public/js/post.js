@@ -1,15 +1,14 @@
 const upvote = document.querySelector("#upvote");
 const downvote = document.querySelector("#downvote");
 
-upvote.addEventListener("click", async function() {
-    const title = document.getElementsByClassName('userpost-title');
-    const score = 1;
-    const post = {title: title, score: score}
-
+upvote?.addEventListener("click", async function(){
+    const post = { score: 1 };
+    
     console.log(post);
+    
     try {
-         const response = await fetch ('/post', {
-             method: 'PUT',
+         const response = await fetch ('/post/:id', {
+             method: 'PATCH',
              body: post,
             headers: {
              'Content-Type': 'application/json'
@@ -25,15 +24,14 @@ upvote.addEventListener("click", async function() {
     }
 });
 
-downvote.addEventListener("click", async function(){
-    const title = document.getElementsByClassName('userpost-title');
-    const score = -1;
-    const post = {title: title, score: score}
+downvote?.addEventListener("click", async function(){
+    const post = { score: -1 };
     
     console.log(post);
+
     try {
-         const response = await fetch ('/post', {
-             method: 'PUT',
+         const response = await fetch ('/post/:id', {
+             method: 'PATCH',
              body: post,
             headers: {
              'Content-Type': 'application/json'
