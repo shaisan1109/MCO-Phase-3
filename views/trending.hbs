@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: url('/img/banner_welcome.jpg');">
+	<h1>{{title}}</h1>
+</div>
+
+{{#each post}}
+    <button class="section-topic">
+        <img src="/img/thumb_default.jpg" class="post-thumb">
+        <p>
+            <h4 class="post-title"><a href="/post/{{_id}}" class="post-option">{{title}}</a></h4>
+            {{shortDesc}}<br>
+            <small class="post-details">Posted by <b><a href="/user/{{user}}">{{user}}</a></b> on {{timePosted}}</small>
+        </p>
+    </button>
+{{/each}}

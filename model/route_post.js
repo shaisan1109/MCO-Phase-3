@@ -143,6 +143,18 @@ router.get('/delete/:id', async (req, res) => {
   }
 });
 
+// GET posts with a certain tag (for trending)
+router.get('category/:tag', async (req, res) => {
+  try {
+    const posts = await Post.find({ tags: tag }).lean();
+    const response = { error: false, posts };
 
+    res.status(200).json(response);
+    res.end();
+  } catch {
+    res.status(500).json({ error: true, message: 'Internal Server Error'});
+    res.end();
+  }
+});
 
 export default router;

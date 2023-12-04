@@ -11,7 +11,12 @@ const trendingSchema = new Schema({
         type: String,
         required: true
     },
-    imgURL: String
+    imgURL: String,
+    tag: {
+        type: String,
+        required: true,
+        unique: true
+    }
 });
 
 // Last parameter is the collection on mongodb

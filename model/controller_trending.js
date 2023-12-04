@@ -5,4 +5,12 @@ export const getAllTrending = async () => {
   return trending;
 };
 
-export default getAllTrending;
+export const getTrendingWithTag = async (tag) => {
+  const trending = await Trending.findOne({ tag }).lean();
+  return trending;
+};
+
+export default {
+  getAllTrending,
+  getTrendingWithTag
+};

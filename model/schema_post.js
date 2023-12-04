@@ -30,6 +30,9 @@ const postSchema = new Schema({
 	timePosted: {
 		type: String,
 		//required: true
+	},
+	tags: {
+		type: String
 	}
 }, { timestamps: true });
 

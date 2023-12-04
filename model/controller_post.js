@@ -44,6 +44,11 @@ export const getPostsWithKeyword = async (q) => {
 	return post;
 }
 
+export const getPostsWithTag = async (tag) => {
+	const post = await Post.find({ tags: tag }).lean();
+	return post;
+}
+
 export default { 
 	getPopularPosts,
 	home_getPopularPosts,
@@ -52,5 +57,6 @@ export default {
 	getPost,
 	getPostByUser,
 	getPostsWithKeyword,
-	home_getCommunityPosts
+	home_getCommunityPosts,
+	getPostsWithTag
 };

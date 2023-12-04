@@ -11,4 +11,12 @@ router.get('/', async (req, res) => {
     });
 });
 
+// GET one trending with tag
+router.get('category/:tag', async (req, res) => {
+  Trending.findOne({ tag: req.params.tag }).then((trending) => {
+    res.json(trending);
+    res.end();
+  });
+});
+
 export default router;

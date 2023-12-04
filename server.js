@@ -25,7 +25,7 @@ import userRoutes from './model/route_user.js';
 import commentRoutes from './model/route_comment.js';
 
 // DB functions
-import getAllTrending from './model/controller_trending.js';
+import  { getAllTrending, getTrendingWithTag } from './model/controller_trending.js';
 
 import {
     getPopularPosts, 
@@ -35,7 +35,8 @@ import {
     getPost,
     getPostByUser,
     getPostsWithKeyword,
-    home_getCommunityPosts
+    home_getCommunityPosts,
+    getPostsWithTag
 } from './model/controller_post.js';
 
 import getUser from './model/controller_user.js';
@@ -301,6 +302,17 @@ app.get('/search', async (req, res) => {
 // Edit profile page
 app.get('/edit_profile', (req, res) => {
     res.render('edit_profile', { title: 'Edit Profile' });
+});
+
+// Page for one category
+app.get('/category/:tag', async (req, res) => {
+    const post = await getPostsWithTag(req.params.tag);
+    const trending = await getTrendingWithTag(req.params.tag);
+
+    res.render('trending', {
+        title: trending.title,
+        post
+    });
 });
 
 /* -------- BACKEND ROUTES -------- */
