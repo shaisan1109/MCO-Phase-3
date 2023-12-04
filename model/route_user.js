@@ -29,6 +29,24 @@ router.get('/register', async function(req, res) {
   }
 });
 
+// GET one user thru username (but for login)
+router.get('/login', async function(req, res) {
+  // your code here
+  try {
+      const user = await User.findOne({ username: req.query.username }).exec();
+      console.log(user);
+      if (user) {
+          res.sendStatus(409);
+      }
+      else {
+          res.sendStatus(200);
+      }
+  } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+  }
+});
+
 // GET one user thru email (for registration)
 router.get('/register', async function(req, res) {
   // your code here

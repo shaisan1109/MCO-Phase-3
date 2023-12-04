@@ -6,16 +6,22 @@
 
             <!-- Login Form -->
             <form action="/login" method="POST">
-                <p>Username<br><input type="text" name="username" class="login-bar" placeholder="Username" required></p>
+                <p>
+                    Username<br>
+                    <input type="text" name="username" id="login-username" class="login-bar" placeholder="Username" required>
+                    <div id="login-username-err" class="err-text"></div>
+                </p>
                 <p>
                     Password<br><input type="password" name="password" class="login-bar" placeholder="Password" required><br>
                     <text class="login-forgot"><a>Forgot your password?</a></text>
                 </p>
                 <input type="checkbox" name="remember" class="login-remember"> Remember me
-                <p><input type="submit" value="LOG IN" class="login-submit"></p>
+                <p><input type="submit" value="LOG IN" class="login-submit" id="login-submit"></p>
             </form>
             
             <p><center>Don't have an account? <a href="#register">Register now.</a></center></p>
         </div>
     </div>
 </div>
+
+<script src="/js/login.js"></script>

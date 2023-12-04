@@ -365,6 +365,9 @@ main {
 .login-submit:hover {
 	background-color: var(--tertiary-color-lighter);
 }
+.login-submit:disabled {
+    background-color: var(--body-color-lighter);
+}
 
 .close {
 	float: right;
