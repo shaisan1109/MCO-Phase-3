@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/css/post.css">
-
+<script src="/js/post.js"></script>
 <h1 class="userpost-title">{{post.title}}</h1>
 <div class="userpost-container">
     <!-- User Info -->
@@ -28,7 +28,7 @@
             {{{post.content}}}
         </div>
         <div class="userpost-footer">
-            <div class="userpost-points"><i class="fa fa-thumbs-up"> | </i> <i class="fa fa-thumbs-down"></i> {{post.points}} points</div>
+            <div class="userpost-points"><i class="fa fa-thumbs-up" id="upvote"> | </i> <i class="fa fa-thumbs-down" id="downvote"></i> {{post.points}} points</div>
             <div class="userpost-date">{{post.timePosted}}</div>
         </div>
     </div>
