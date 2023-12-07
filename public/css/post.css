@@ -131,6 +131,14 @@
 	margin-left: auto;
 }
 
+.comment-notlogged {
+	background-color: var(--body-color-lighter);
+	padding: 10px;
+	font-style: italic;
+	font-size: 25px;
+	width: 90%;
+}
+
 /* ------- REPLY ------- */
 .reply {
 	background-color: var(--body-color-lighter);

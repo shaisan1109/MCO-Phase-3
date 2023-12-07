@@ -78,7 +78,11 @@
 </div>
 
 <!-- Create comment form -->
-{{> createComment}}
+{{#if authenticated}}
+    {{> createComment}}
+    {{else}}
+    <div class="comment-notlogged"><a href="#login">Log in</a> or <a href="#register">register</a> to post a comment!</div>
+{{/if}}
 
 <!-- delete post button -->
 <div class="delete-post-button">
