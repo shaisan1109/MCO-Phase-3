@@ -121,18 +121,55 @@ app.get('/', async (req, res) => {
 // Popular posts page
 app.get('/popular', async (req, res) => {
     const popular = await getPopularPosts();
-    res.render('popular', { title: 'Popular Posts', popular: popular });
+
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
+    res.render('popular', {
+        title: 'Popular Posts',
+        popular: popular,
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
+    });
 });
 
 // Recent posts page
 app.get('/new', async (req, res) => {
     const recent = await getRecentPosts();
-    res.render('new', { title: 'Recent Posts', recent: recent });
+
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
+    res.render('new', {
+        title: 'Recent Posts',
+        recent: recent,
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
+    });
 });
 
 // About page
 app.get('/about', (req, res) => {
-    res.render('about', { title: 'About' });
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
+    res.render('about', {
+        title: 'About',
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
+    });
 });
 
 // Post (with comments)
@@ -145,12 +182,21 @@ app.get('/post/:id', async (req, res) => {
     const comments = await getCommentOfPost(req.params.id);
     const commenters = await getUser(comments.user);
 
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
     res.render('post', {
         title: post.title,
         post: post,
         user: user,
         comments: comments,
-        commenters: commenters
+        commenters: commenters,
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
     });
 });
 
@@ -162,11 +208,20 @@ app.post('/post/:id', async (req, res) => {
 
     const username = req.session.user.username;
 
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
     const newComment = new Comment({
         user: username,
         postID: postID,
         content: content,
-        timePosted: new Date().toISOString() 
+        timePosted: new Date().toISOString(),
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
     });
 
     await newComment.save(); // Save the new comment to the database
@@ -180,11 +235,20 @@ app.get('/user/:username', async (req, res) => {
     const userPost = await getPostByUser(req.params.username);
     const userComment = await getCommentsByUser(req.params.username);
 
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
     res.render('user', {
         title: req.params.username,
         user,
         userPost,
-        userComment
+        userComment,
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
     });
 });
 
@@ -194,6 +258,13 @@ import User from './model/schema_user.js' // user model
 // Register form
 app.post('/register', async (req, res) => {
     const hashedPass = await bcrypt.hash(req.body.password, 10);
+
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
 
     const user = new User({
         username: req.body.username,
@@ -207,7 +278,11 @@ app.post('/register', async (req, res) => {
 
     await user.save();
 
-    res.render('user_created', { title: 'Success!' })
+    res.render('user_created', {
+        title: 'Success!',
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
+    })
 });
 
 // Login request
@@ -240,7 +315,18 @@ app.post('/login', async (req, res) => {
 
 // Create post page
 app.get('/create_post', async (req, res) => {
-    res.render('createPost', { title: 'Create Post' });
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
+    res.render('createPost', {
+        title: 'Create Post',
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
+    });
 });
 
 import Post from './model/schema_post.js'; // Import the Post model
@@ -282,18 +368,33 @@ app.get('/search', async (req, res) => {
     const postResults = await getPostsWithKeyword(search);
     const commentResults = await getCommentsWithKeyword(search);
 
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
     if(search === "") {
-        res.render('search', { title: 'Search'});
+        res.render('search', {
+            title: 'Search',
+            authenticated: res.locals.authenticated, // check if user is logged in
+            username: currentUser
+        });
     } else {
         if(type === "post") {
             res.render('search', {
                 title: 'Search',
-                postResults: postResults
+                postResults: postResults,
+                authenticated: res.locals.authenticated, // check if user is logged in
+                username: currentUser
             });
         } else { // type is comment
             res.render('search', {
                 title: 'Search',
-                commentResults: commentResults
+                commentResults: commentResults,
+                authenticated: res.locals.authenticated, // check if user is logged in
+                username: currentUser
             });
         }
     }
@@ -301,7 +402,18 @@ app.get('/search', async (req, res) => {
 
 // Edit profile page
 app.get('/edit_profile', (req, res) => {
-    res.render('edit_profile', { title: 'Edit Profile' });
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
+    res.render('edit_profile', {
+        title: 'Edit Profile',
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
+    });
 });
 
 // Page for one category
@@ -309,9 +421,18 @@ app.get('/category/:tag', async (req, res) => {
     const post = await getPostsWithTag(req.params.tag);
     const trending = await getTrendingWithTag(req.params.tag);
 
+    // Check first if user is authenticated
+    let currentUser = null;
+
+    if(res.locals.authenticated) {
+        currentUser = res.locals.user.username;
+    }
+
     res.render('trending', {
         title: trending.title,
-        post
+        post,
+        authenticated: res.locals.authenticated, // check if user is logged in
+        username: currentUser
     });
 });
 
